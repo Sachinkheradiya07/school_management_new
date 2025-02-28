@@ -1,0 +1,41 @@
+###
+curl -X POST http://localhost:8080/api/auth/register \
+     -H "Content-Type: application/json" \
+     -d '{
+           "name": "sachin kheradiya",
+           "email": "sachinkheradiya01@gmail.com",
+           "password": "Sachin@123",
+           "username": "Sachin0",
+           "usertype": "admin",
+           "age": 30
+         }'
+###
+curl -X POST http://localhost:8080/api/auth/login \
+     -H "Content-Type: application/json" \
+     -d '{"email": "sachinkheradiya98@gmail.com", "password": "Sachin@123"}'
+###
+curl -X PUT http://localhost:8080/api/user/update/1 \
+-H "Content-Type: application/json" \
+-d '{
+  "name": "Updated Name",
+  "email": "updated.email@example.com",
+  "username": "updatedusername",
+  "usertype": "student",
+  "age": 28,
+  "profileimage": "path/to/updated/image.jpg"
+}'
+
+###
+curl -X POST http://localhost:8080/api/user/invoice/ \
+     -H "Content-Type: application/json" \
+     -d '{
+          "email": "sachinkheradiya01@gmail.com",
+          "customerName": "Sachin Kheradiya",
+          "items": [
+              { "name": "Product A", "price": "500" },
+              { "name": "Product B", "price": "200" },
+               { "name": "Product C", "price": "500" },
+                { "name": "Product D", "price": "200" }
+          ],
+          "totalAmount": "1400"
+      }'
